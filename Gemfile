@@ -70,3 +70,5 @@ gem "rspec-rails", "~> 6.0"
 gem "vcr", "~> 6.2"
 
 gem "webmock", "~> 3.19"
+
+gem "httparty", "~> 0.21.0"
