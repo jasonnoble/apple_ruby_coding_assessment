@@ -64,3 +64,9 @@ group :development do
 
 end
 
+
+gem "rspec-rails", "~> 6.0"
+
+gem "vcr", "~> 6.2"
+
+gem "webmock", "~> 3.19"
