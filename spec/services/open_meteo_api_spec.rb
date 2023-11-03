@@ -10,5 +10,12 @@ RSpec.describe 'OpenMeteoApi' do
         expect(weather_data).to be_an(Array)
       end
     end
+
+    it 'returns an error when lat/lng are invalid' do
+      VCR.use_cassette('weather_by_lat_lng_api_error') do
+        weather_data = OpenMeteoApi.new.weather_by_lat_lng('', '')
+        expect(weather_data).to be_an(Array)
+      end
+    end
   end
 end

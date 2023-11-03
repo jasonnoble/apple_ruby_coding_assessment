@@ -7,11 +7,15 @@ class OpenMeteoApi
 
   def weather_by_lat_lng(latitude, longitude)
     response = self.class.get("/forecast", query: default_params.merge(latitude: latitude, longitude: longitude))
-    @current_temperature = response['current']
-    @forecast_min_max = response['daily']['time'].zip(
-      response['daily']['temperature_2m_min'],
-      response['daily']['temperature_2m_max'])
-    [@current_temperature, @forecast_min_max]
+    if response['content-length'] == "0"
+      ["Unable to retrieve weather for #{latitude}, #{longitude}", []]
+    else
+      current_temperature = response['current']
+      forecast_min_max = response['daily']['time'].zip(
+        response['daily']['temperature_2m_min'],
+        response['daily']['temperature_2m_max'])
+      [current_temperature, forecast_min_max]
+    end
   end
 
   private

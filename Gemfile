@@ -54,6 +54,7 @@ group :development, :test do
   gem "vcr", "~> 6.2"
   gem "webmock", "~> 3.19"
   gem "httparty", "~> 0.21.0"
+  gem 'byebug'
 end
 
 group :development do
