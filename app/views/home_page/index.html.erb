@@ -1,7 +1,10 @@
 <%= image_tag 'weather_logo.png' %>
 
 <div class="rounded-full py-2 px-4 flex border-2 border-gray-300">
-  <div class="flex px-4 w-full">
-    <input type="text" class="w-full border-none outline-none text-base bg-darksky text-white" autocomplete="off" placeholder="Type an address">
+  <div class="flex px-4 w-full" data-controller="address" data-action="map-loaded@window->address#initGoogle">
+    <input type="text" id="address" data-address-target="input" class="w-full border-none outline-none text-base bg-darksky text-white" autocomplete="off" placeholder="Type an address">
   </div>
 </div>
+
+<%= turbo_frame_tag "weather_data" do %>
+<% end %>
