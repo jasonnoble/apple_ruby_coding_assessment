@@ -50,6 +50,11 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
+  gem "rspec-rails", "~> 6.0"
+  gem "vcr", "~> 6.2"
+  gem "webmock", "~> 3.19"
+  gem "httparty", "~> 0.21.0"
+  gem 'byebug'
 end
 
 group :development do
@@ -64,3 +69,6 @@ group :development do
 
 end
 
+group :test do
+  gem 'simplecov', require: false
+end

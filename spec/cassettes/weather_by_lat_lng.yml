@@ -1,0 +1,34 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.open-meteo.com/v1/forecast?current=temperature_2m&daily=weathercode,temperature_2m_max,temperature_2m_min&latitude=39.7777343&longitude=-104.8649863&precipitation_unit=inch&temperature_unit=fahrenheit&timezone=America/Denver&windspeed_unit=mph
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 02 Nov 2023 20:06:26 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJsYXRpdHVkZSI6MzkuNzgyNDY3LCJsb25naXR1ZGUiOi0xMDQuODUwMDA2LCJnZW5lcmF0aW9udGltZV9tcyI6MC4xMTA5ODM4NDg1NzE3NzczNCwidXRjX29mZnNldF9zZWNvbmRzIjotMjE2MDAsInRpbWV6b25lIjoiQW1lcmljYS9EZW52ZXIiLCJ0aW1lem9uZV9hYmJyZXZpYXRpb24iOiJNRFQiLCJlbGV2YXRpb24iOjE2MTEuMCwiY3VycmVudF91bml0cyI6eyJ0aW1lIjoiaXNvODYwMSIsImludGVydmFsIjoic2Vjb25kcyIsInRlbXBlcmF0dXJlXzJtIjoiwrBGIn0sImN1cnJlbnQiOnsidGltZSI6IjIwMjMtMTEtMDJUMTQ6MDAiLCJpbnRlcnZhbCI6OTAwLCJ0ZW1wZXJhdHVyZV8ybSI6NjcuNH0sImRhaWx5X3VuaXRzIjp7InRpbWUiOiJpc284NjAxIiwid2VhdGhlcmNvZGUiOiJ3bW8gY29kZSIsInRlbXBlcmF0dXJlXzJtX21heCI6IsKwRiIsInRlbXBlcmF0dXJlXzJtX21pbiI6IsKwRiJ9LCJkYWlseSI6eyJ0aW1lIjpbIjIwMjMtMTEtMDIiLCIyMDIzLTExLTAzIiwiMjAyMy0xMS0wNCIsIjIwMjMtMTEtMDUiLCIyMDIzLTExLTA2IiwiMjAyMy0xMS0wNyIsIjIwMjMtMTEtMDgiXSwid2VhdGhlcmNvZGUiOlsyLDMsMywzLDMsMywzXSwidGVtcGVyYXR1cmVfMm1fbWF4IjpbNjcuOCw2NC4zLDY1LjUsNjcuNyw2Mi4zLDU5LjEsNTcuNV0sInRlbXBlcmF0dXJlXzJtX21pbiI6WzMzLjksNDMuMCwzNC42LDQ5LjksNDguMiw0Ny45LDQ0LjNdfX0=
+  recorded_at: Thu, 02 Nov 2023 20:06:26 GMT
+recorded_with: VCR 6.2.0

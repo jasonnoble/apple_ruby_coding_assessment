@@ -1,0 +1,47 @@
+<%= turbo_frame_tag "weather_data" do %>
+  <div class="flex flex-col justify-between w-full px-4 py-4 cached-<%= @cached_weather_data %>">
+    <div class="flex flex-col rounded-2xl overflow-hidden bg-white text-center w-full mr-2">
+      <div class="bg-yellow-500 text-white py-1">
+        Current Temperature
+      </div>
+      <div class="pt-1 border-l border-r">
+        <span class="text-4xl font-bold"><%= @weather.first['temperature_2m'] || @weather.first %>° F</span>
+      </div>
+    </div>
+
+    <% @weather[1].each do |forecast| %>
+      <div class="flex flex-row py-4 justify-between forecast">
+        <div class="flex flex-col rounded-2xl overflow-hidden bg-white text-center w-2/6 mr-2">
+          <div class="bg-red-500 text-white py-1">
+            <%= Date.parse(forecast[0]).strftime("%A") %>
+          </div>
+          <div class="pt-1 border-l border-r">
+            <span class="text-4xl font-bold"><%= Date.parse(forecast[0]).strftime("%d") %></span>
+          </div>
+          <div class="pb-2 px-2 border-l border-r border-b rounded-b flex justify-between">
+            <span class="text-xs font-bold"><%= Date.parse(forecast[0]).strftime("%B") %></span>
+            <span class="text-xs font-bold"><%= Date.parse(forecast[0]).strftime("%Y") %></span>
+          </div>
+        </div>
+
+        <div class="flex flex-col rounded-2xl overflow-hidden bg-white text-center w-2/6 mr-2">
+          <div class="bg-green-500 text-white py-1">
+           Low
+          </div>
+          <div class="pt-1 border-l border-r">
+            <span class="text-4xl font-bold"><%= forecast[2] %>° F</span>
+          </div>
+        </div>
+
+        <div class="flex flex-col rounded-2xl overflow-hidden bg-white text-center w-2/6">
+          <div class="bg-green-700 text-white py-1">
+            High
+          </div>
+          <div class="pt-1 border-l border-r">
+            <span class="text-4xl font-bold"><%= forecast[1] %>° F</span>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
